@@ -10,4 +10,6 @@
     <string name="ButtonD">D</string>
     <string name="ButtonE">E</string>
     <string name="ButtonC">C</string>
+    <string name="pressed">Pressed:</string>
+    <string name="press">Pressed:-</string>
 </resources>
