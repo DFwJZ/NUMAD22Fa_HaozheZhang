@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">NUMAD22Fa_HaozheZhang</string>
+    <string name="about_me">About Me!</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="clicky_clicky_btn">Clicky Clicky</string>
+    <string name="ButtonA">A</string>
+    <string name="button">B</string>
+    <string name="ButtonB">B</string>
+    <string name="ButtonF">F</string>
+    <string name="ButtonD">D</string>
+    <string name="ButtonE">E</string>
+    <string name="ButtonC">C</string>
 </resources>

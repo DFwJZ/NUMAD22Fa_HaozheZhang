@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "DemoInitialApp";
+    private static final String TAG = "MainActivity____";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

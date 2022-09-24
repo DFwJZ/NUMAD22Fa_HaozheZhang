@@ -10,10 +10,10 @@
         android:id="@+id/Display_message"
         android:layout_width="103dp"
         android:layout_height="30dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/hello_world"
+        app:layout_constraintBottom_toTopOf="@id/btnClickMe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121" />
@@ -22,8 +22,29 @@
         android:id="@+id/btnClickMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Me!"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="253dp" />
+        android:text="@string/about_me"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Display_message"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <Button
+        android:id="@+id/clicky_clicky_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clicky_clicky_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClickMe" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
