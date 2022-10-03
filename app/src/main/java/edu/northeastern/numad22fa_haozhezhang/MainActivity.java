@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity____";
     private Button clickMe;
     private Button ClickyClicky;
+    private Button linkCollector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(clickyIntent);
             }
         });
+
+        linkCollector = findViewById(R.id.link_collector);
+        linkCollector.setOnClickListener((new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Log.v(TAG, "Entering link collector...");
+                Intent linkCollectorIntent = new Intent(MainActivity.this, LinkCollector.class);
+                startActivity(linkCollectorIntent);
+            };
+
+        }));
     }
 
     @Override

@@ -12,4 +12,5 @@
     <string name="ButtonC">C</string>
     <string name="pressed">Pressed:</string>
     <string name="press">Pressed:-</string>
+    <string name="link_collector">Link Collector</string>
 </resources>

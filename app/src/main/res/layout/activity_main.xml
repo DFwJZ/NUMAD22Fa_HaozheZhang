@@ -7,44 +7,54 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/Display_message"
+        android:id="@+id/AboutMe"
         android:layout_width="103dp"
         android:layout_height="30dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/hello_world"
-        app:layout_constraintBottom_toTopOf="@id/btnClickMe"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <Button
         android:id="@+id/btnClickMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/about_me"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clicky_clicky_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Display_message"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        android:orientation="vertical" />
 
     <Button
         android:id="@+id/clicky_clicky_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clicky_clicky_btn"
+        app:layout_constraintBottom_toTopOf="@id/link_collector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClickMe"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/link_collector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/link_collector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnClickMe" />
+        app:layout_constraintTop_toBottomOf="@+id/clicky_clicky_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
