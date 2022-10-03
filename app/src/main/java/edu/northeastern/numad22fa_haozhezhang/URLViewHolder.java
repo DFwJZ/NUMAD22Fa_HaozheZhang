@@ -1,22 +1,30 @@
 package edu.northeastern.numad22fa_haozhezhang;
 
-import android.content.Context;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+
 
 public class URLViewHolder extends RecyclerView.ViewHolder {
 
+    public TextView urlName;
     public TextView urlAddress;
-    public URLViewHolder(@NonNull View itemView) {
+
+    public URLViewHolder(@NonNull View itemView, final URLAdaptor.LinkClickListener linkClickListener) {
         super(itemView);
-        this.urlAddress = itemView.findViewById(R.id.add_website_link_btn);
+        this.urlName= itemView.findViewById(R.id.url_name_pair);
+        this.urlAddress = itemView.findViewById(R.id.url_address_pair);
+
+        itemView.setOnClickListener(view -> {
+            int layoutPosition = getLayoutPosition();
+            if (layoutPosition != RecyclerView.NO_POSITION) {
+                linkClickListener.onLinkClick(layoutPosition);
+            }
+        });
 
     }
 }

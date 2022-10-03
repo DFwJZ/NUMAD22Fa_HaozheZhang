@@ -8,8 +8,16 @@
     tools:context=".LinkCollector">
 
   <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView"
       android:layout_width="match_parent"
-      android:layout_height="match_parent" />
+      android:layout_height="match_parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0"
+      />
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/add_website_link_btn"
@@ -20,6 +28,7 @@
       android:clickable="true"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:srcCompat="@android:drawable/ic_input_add" />
+      app:srcCompat="@android:drawable/ic_input_add"
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

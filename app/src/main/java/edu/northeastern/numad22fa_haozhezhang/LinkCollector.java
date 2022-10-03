@@ -1,54 +1,98 @@
 package edu.northeastern.numad22fa_haozhezhang;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.ClipData;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
-public class LinkCollector extends AppCompatActivity implements GenerateDialog.UrlDialogListener{
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class LinkCollector extends AppCompatActivity {
+    private ArrayList<URL> urlList = new ArrayList<>();
+    private AlertDialog inputDialog;
     private FloatingActionButton FAB_add_url;
-    private TextView textUrl;
+    private EditText textUrlName;
+    private EditText textUrlAddress;
+    private RecyclerView recyclerView;
+    private URLAdaptor urlAdaptor;
+    private int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_collector);
 
-//        textUrl = (TextView) findViewById(R.id.text)
+        // Adding the floating action button
         FAB_add_url = findViewById(R.id.add_website_link_btn);
-        FAB_add_url.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog();
-            }
-        });
-    }
+        // Init FAB
+        FAB_add_url.setOnClickListener(view -> addNewUrl());
 
-    private void openDialog() {
-        GenerateDialog generateDialog = new GenerateDialog();
-        generateDialog.show(getSupportFragmentManager(), "example dialog");
-    }
 
-    @Override
-    public void applyTexts(String urlAddress) {
+        createInputAlertDialog();
+        createRecyclerView();
+        urlAdaptor.setLinkClickListener(position -> urlList.get(position).onClickLink(this));
+
 
     }
+
+    private void addNewUrl() {
+        textUrlName.getText().clear();
+        textUrlAddress.getText().clear();
+        textUrlAddress.setText(R.string.HTTP);
+        textUrlName.requestFocus();
+        inputDialog.show();
+    }
+
+    public void createRecyclerView() {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView = findViewById(R.id.recyclerView);
+//        recyclerView.setHasFixedSize(true);
+        urlAdaptor = new URLAdaptor(urlList);
+
+        recyclerView.setAdapter(urlAdaptor);
+        recyclerView.setLayoutManager(layoutManager);
+    }
+
+    public void createInputAlertDialog() {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View view = layoutInflater.inflate(R.layout.activity_dialog, null);
+
+        textUrlName = view.findViewById(R.id.url_name_input);
+        textUrlAddress = view.findViewById(R.id.url_address_input);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setView(view);
+
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton(getString(R.string.Add),
+                        (dialog, id) -> {
+                            URL urlItem = new URL(textUrlName.getText().toString(), textUrlAddress.getText().toString());
+                            if (urlItem.validUrl()) {
+                                urlList.add(0, urlItem);
+                                urlAdaptor.notifyDataSetChanged();
+                                Snackbar.make(recyclerView, getString(R.string.SuccessAddUrl), Snackbar.LENGTH_LONG).show();
+                            } else {
+                                Snackbar.make(recyclerView, getString(R.string.FailAddUrl), Snackbar.LENGTH_LONG).show();
+                            }
+                        })
+                .setNegativeButton(getString(R.string.Cancel),
+                        (dialog, id) -> dialog.cancel());
+        inputDialog = alertDialogBuilder.create();
+    }
+
+
 }
 
-//        FAB_add_url.setOnClickListener(new View.OnClickListener(){
-//        @Override
-//        public void onClick(View view) {
-//                Snackbar snackbar = Snackbar.make(view,"add a link here", Snackbar.LENGTH_LONG)
-//                        .setAction("Yes", new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//                                Snackbar mSnackbar = Snackbar.make(view, "Message successfully deleted.", Snackbar.LENGTH_SHORT);
-//                                mSnackbar.show();
-//                            }
-//                        });
-//                snackbar.show();
-//        }
-//    });
-//}

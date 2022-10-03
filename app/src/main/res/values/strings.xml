@@ -13,4 +13,14 @@
     <string name="pressed">Pressed:</string>
     <string name="press">Pressed:-</string>
     <string name="link_collector">Link Collector</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
+    <string name="SuccessAddUrl">Url is added successfully</string>
+    <string name="FailAddUrl">Url is not valid, check your input</string>
+    <string name="url_info">url information</string>
+    <string name="enter_url_detail">URL Detail</string>
+    <string name="web_name">Web name:</string>
+    <string name="url_address_display">Url:</string>
+    <string name="HTTP">https://</string>
+
 </resources>
