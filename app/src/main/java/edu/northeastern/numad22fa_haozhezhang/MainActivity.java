@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity____";
     private Button clickMe;
     private Button ClickyClicky;
-    private Button linkCollector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         // Wire up the button to do stuff
 
         // get the button
-        clickMe  = findViewById(R.id.btnClickMe);
+        clickMe  = findViewById(R.id.AboutmeBtn);
 
         // set what happens when the user clicks
+
+        // Week 1 About me button
         clickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,27 +39,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ClickyClicky = findViewById(R.id.clicky_clicky_btn);
-        ClickyClicky.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Log.v(TAG, "Enter Clicky Clicky...");
-                Intent clickyIntent = new Intent(MainActivity.this, ClickyClickyActivity.class);
-                startActivity(clickyIntent);
-            }
-        });
+    }
 
-        linkCollector = findViewById(R.id.link_collector);
-        linkCollector.setOnClickListener((new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Log.v(TAG, "Entering link collector...");
-                Intent linkCollectorIntent = new Intent(MainActivity.this, LinkCollector.class);
-                startActivity(linkCollectorIntent);
-            };
+    // Week 3 adding clickyClicky feature
+    public void clickyClicky(View view) {
+        Log.v(TAG, "Enter Clicky Clicky...");
+        Intent clickyIntent = new Intent(MainActivity.this, ClickyClickyActivity.class);
+        startActivity(clickyIntent);
+    }
 
-        }));
+    // Week 4 adding recyclerView of a link collector feature
+    public void linkCollector(View view) {
+        Log.v(TAG, "Entering link collector...");
+        Intent linkCollectorIntent = new Intent(MainActivity.this, LinkCollector.class);
+        startActivity(linkCollectorIntent);
+    }
+
+    // Week 5 adding Finding Primes feature
+    public void findPrimes(View view) {
+        Log.v(TAG, "Entering findPrimes activity....");
+        Intent findPrimesIntent = new Intent(MainActivity.this, findPrimes.class);
+        startActivity(findPrimesIntent);
     }
 
     @Override

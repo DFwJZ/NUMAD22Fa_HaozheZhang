@@ -22,5 +22,6 @@
     <string name="web_name">Web name:</string>
     <string name="url_address_display">Url:</string>
     <string name="HTTP">https://</string>
+    <string name="find_prime">Find Primes</string>
 
 </resources>
