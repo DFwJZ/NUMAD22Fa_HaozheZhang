@@ -23,5 +23,15 @@
     <string name="url_address_display">Url:</string>
     <string name="HTTP">https://</string>
     <string name="find_prime">Find Primes</string>
+    <string name="prime_display">Primes</string>
+    <string name="find_primes">Find Primes</string>
+    <string name="terminate_search">Terminate Search</string>
+    <string name="pacifier_switch">Pacifier Switch</string>
+    <string name="terminate_search_dialog_display">Terminate Search Now?</string>
+    <string name="status_check_btn">Status Check</string>
+    <string name="status_check_display">click left to check</string>
+    <string name="is_prime_display">Is Prime?</string>
+    <string name="current_prime_number_check_display">Current number being checked: %1$s</string>
+    <string name="dialog_go_back">Do you want to go back while app is running?</string>
 
 </resources>

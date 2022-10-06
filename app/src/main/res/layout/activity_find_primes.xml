@@ -4,6 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".findPrimes">
+    tools:context=".FindPrimes">
 
+    <TextView
+        android:id="@+id/prime_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prime_display"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toTopOf="@+id/find_primes"
+        app:layout_constraintEnd_toStartOf="@+id/is_prime_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/is_prime_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:inputType="textMultiLine"
+        android:text="@string/is_prime_display"
+        app:layout_constraintBottom_toBottomOf="@+id/prime_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/prime_text_view"
+        app:layout_constraintTop_toTopOf="@id/prime_text_view" />
+
+    <Button
+        android:id="@+id/find_primes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="findPrimes"
+        android:text="@string/find_primes"
+        app:layout_constraintBottom_toTopOf="@id/pacifier_switch"
+        app:layout_constraintEnd_toStartOf="@+id/terminate_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prime_text_view" />
+
+    <Button
+        android:id="@+id/terminate_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terminate_search"
+        android:onClick="terminateSearch"
+        app:layout_constraintBottom_toBottomOf="@+id/find_primes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/find_primes"
+        app:layout_constraintTop_toTopOf="@+id/find_primes"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/pacifier_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/pacifier_switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_primes" />
+
+
+    <!--    <Button-->
+<!--        android:id="@+id/status_check"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="122dp"-->
+<!--        android:onClick="statusCheck"-->
+<!--        android:text="@string/status_check_btn"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/status_check_text_view"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/find_primes"-->
+<!--        app:layout_constraintVertical_bias="0.754" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/status_check_text_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/status_check_display"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/status_check"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.787"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/status_check"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/status_check"-->
+<!--        app:layout_constraintVertical_bias="0.448" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,13 +12,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity____";
     private Button clickMe;
-    private Button ClickyClicky;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         // Wire up the button to do stuff
 
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     // Week 5 adding Finding Primes feature
     public void findPrimes(View view) {
         Log.v(TAG, "Entering findPrimes activity....");
-        Intent findPrimesIntent = new Intent(MainActivity.this, findPrimes.class);
+        Intent findPrimesIntent = new Intent(MainActivity.this, FindPrimes.class);
         startActivity(findPrimesIntent);
     }
 

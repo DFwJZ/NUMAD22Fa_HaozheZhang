@@ -2,23 +2,18 @@ package edu.northeastern.numad22fa_haozhezhang;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class LinkCollector extends AppCompatActivity {
     private ArrayList<URL> urlList = new ArrayList<>();
@@ -68,7 +63,7 @@ public class LinkCollector extends AppCompatActivity {
 
     public void createInputAlertDialog() {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.activity_dialog, null);
+        View view = layoutInflater.inflate(R.layout.activity_dialog_link_collector, null);
 
         textUrlName = view.findViewById(R.id.url_name_input);
         textUrlAddress = view.findViewById(R.id.url_address_input);
