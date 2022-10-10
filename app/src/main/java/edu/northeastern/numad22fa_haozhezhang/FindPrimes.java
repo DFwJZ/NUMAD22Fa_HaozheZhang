@@ -80,7 +80,7 @@ public class FindPrimes extends AppCompatActivity {
 //
 //        executor.shutdown();
 //    }
-    private boolean isPrime(int num) {
+    private boolean isPrime(long num) {
         for (int i = 2; i <= num / i; ++i) {
             if (num % i == 0) {
                 return false;
@@ -141,9 +141,7 @@ public class FindPrimes extends AppCompatActivity {
         isRunning = true;
         PrimeRunnable newPrime = new PrimeRunnable();
         new Thread(newPrime).start();
-
     }
-
 
     class PrimeRunnable implements Runnable {
         private static final String TAG = "MainActivity";
@@ -151,26 +149,30 @@ public class FindPrimes extends AppCompatActivity {
         //thread.runing /live
         @Override
         public void run() {
-            for (int i = 3; ; i += 2) {
+            for (long i = 3, counter = 1; ; i += 2) {
+                counter++;
                 if (!isRunning) break;
-                final int finalI = i;
-                textHandler.post(new Runnable() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void run() {
-                        primeTextView.setText("Currently number being checked: " + finalI);
-                        if (isPrime(finalI)) {
-                            isPrimeDisplay.setText("Yes, it's a Prime.");
-                        } else {
-                            isPrimeDisplay.setText("No, it's not a Prime.");
+                // set counter to avoid output all displayed numbers, check a number for every 100 interval
+                if (counter % 100 == 0) {
+                    final long finalI = i;
+                    textHandler.post(new Runnable() {
+                        @SuppressLint("SetTextI18n")
+                        @Override
+                        public void run() {
+                            primeTextView.setText("Currently number being checked: " + finalI);
+                            if (isPrime(finalI)) {
+                                isPrimeDisplay.setText("Yes, it's a Prime.");
+                            } else {
+                                isPrimeDisplay.setText("No, it's not a Prime.");
+                            }
                         }
+                    });
+                    Log.d(TAG, "Running on a different thread using Runnable Interface: " + i);
+                    try {
+                        Thread.sleep(500); //Makes the thread sleep or be inactive for 1 seconds
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                });
-                Log.d(TAG, "Running on a different thread using Runnable Interface: " + i);
-                try {
-                    Thread.sleep(1000); //Makes the thread sleep or be inactive for 1 seconds
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
         }
