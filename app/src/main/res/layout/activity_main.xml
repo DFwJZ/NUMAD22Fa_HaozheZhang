@@ -10,7 +10,7 @@
         android:id="@+id/HelloWorld"
         android:layout_width="178dp"
         android:layout_height="56dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/hello_world"
         android:textSize="20sp"
@@ -50,9 +50,9 @@
         android:id="@+id/link_collector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/link_collector"
         android:onClick="linkCollector"
-        app:layout_constraintBottom_toBottomOf="@id/find_primes"
+        android:text="@string/link_collector"
+        app:layout_constraintBottom_toBottomOf="@+id/find_primes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/find_primes"
         app:layout_constraintTop_toBottomOf="@id/clicky_clicky_btn"
@@ -64,10 +64,21 @@
         android:layout_height="wrap_content"
         android:text="@string/find_prime"
         android:onClick="findPrimes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/location"
         app:layout_constraintEnd_toStartOf="@+id/link_collector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AboutmeBtn" />
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_confirmed"
+        android:onClick="locationConfirmed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_primes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

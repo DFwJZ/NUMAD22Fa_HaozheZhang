@@ -24,6 +24,7 @@
     <string name="HTTP">https://</string>
     <string name="find_prime">Find Primes</string>
     <string name="prime_display">Primes</string>
+    <string name="location_confirmed">Location</string>
     <string name="find_primes">Find Primes</string>
     <string name="terminate_search">Terminate Search</string>
     <string name="pacifier_switch">Pacifier Switch</string>
@@ -33,5 +34,9 @@
     <string name="is_prime_display">Is Prime?</string>
     <string name="current_prime_number_check_display">Current number being checked: %1$s</string>
     <string name="dialog_go_back">Do you want to go back while app is running?</string>
+    <string name="lat_display">"Latitude: "</string>
+    <string name="long_display">"Longitude: "</string>
+    <string name="distance_travelled_display">"Travelled: "</string>
+    <string name="reset_distance">"Reset"</string>
 
 </resources>
