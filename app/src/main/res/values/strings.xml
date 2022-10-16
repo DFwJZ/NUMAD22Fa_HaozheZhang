@@ -36,7 +36,9 @@
     <string name="dialog_go_back">Do you want to go back while app is running?</string>
     <string name="lat_display">"Latitude: "</string>
     <string name="long_display">"Longitude: "</string>
-    <string name="distance_travelled_display">"Travelled: "</string>
+    <string name="distance_travelled_display">"Distance: "</string>
     <string name="reset_distance">"Reset"</string>
+    <string name="btn_current_location">"Get Location"</string>
+    <string name="gps_updates">GPS updates</string>
 
 </resources>

@@ -64,13 +64,13 @@
         android:layout_height="wrap_content"
         android:text="@string/find_prime"
         android:onClick="findPrimes"
-        app:layout_constraintBottom_toTopOf="@+id/location"
+        app:layout_constraintBottom_toTopOf="@+id/locationConfirmed"
         app:layout_constraintEnd_toStartOf="@+id/link_collector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AboutmeBtn" />
 
     <Button
-        android:id="@+id/location"
+        android:id="@+id/locationConfirmed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/location_confirmed"

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/acitivity_location_confirmed.xml" value="0.5333333333333333" />
         <entry key="app/src/main/res/layout/activity_clicky_clicky.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_dialog.xml" value="0.39630390143737165" />
         <entry key="app/src/main/res/layout/activity_dialog_find_primes.xml" value="0.1" />
@@ -10,7 +11,8 @@
         <entry key="app/src/main/res/layout/activity_dialog_link_collector.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/layout/activity_find_primes.xml" value="0.5177083333333333" />
         <entry key="app/src/main/res/layout/activity_link_collector.xml" value="0.41454545454545455" />
-        <entry key="app/src/main/res/layout/activity_location.xml" value="0.5333333333333333" />
+        <entry key="app/src/main/res/layout/activity_location.xml" value="0.14473684210526316" />
+        <entry key="app/src/main/res/layout/activity_location_confirmed.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_url_item.xml" value="0.5333333333333333" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.33" />
@@ -30,7 +32,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.75" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>

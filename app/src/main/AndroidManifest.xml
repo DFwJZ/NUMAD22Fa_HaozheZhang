@@ -4,8 +4,8 @@
     package="edu.northeastern.numad22fa_haozhezhang">
 
     <!-- Always include this permission -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- Include only if your app benefits from precise locationConfirmed access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -20,8 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Fa_HaozheZhang"
         tools:targetApi="31">
+
         <activity
-            android:name=".Location"
+            android:name=".LocationConfirmed"
             android:exported="false" />
         <activity
             android:name=".FindPrimes"

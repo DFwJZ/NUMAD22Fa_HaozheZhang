@@ -1,15 +1,8 @@
 package edu.northeastern.numad22fa_haozhezhang;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +12,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity____";
     private Button clickMe;
-    private static final int MY_PERMISSIONS_REQUEST_LOCATION = 101;
+    public static final int MY_PERMISSIONS_REQUEST_CODE = 101;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Wire up the button to do stuff
-
         // get the button
         clickMe  = findViewById(R.id.AboutmeBtn);
-
         // set what happens when the user clicks
-
         // Week 1 About me button
         clickMe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,70 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
     // Week 6 adding Location Confirmed feature
     public void locationConfirmed(View view) {
-        setupPermission();
-
-        Intent locationConfirmedActivity = new Intent(MainActivity.this, Location.class);
+        Log.v(TAG, "Entering locationConfirmed activity....");
+        Intent locationConfirmedActivity = new Intent(MainActivity.this, LocationConfirmed.class);
         startActivity(locationConfirmedActivity);
 
     }
 
-    public boolean setupPermission() {
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                new AlertDialog.Builder(this)
-                        .setTitle("Suggestion")
-                        .setMessage("Precious GPS gives better result.")
-                        .setPositiveButton("I understand", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //Prompt the user once explanation has been shown
-                                makeRequest();
-                            }
-                        })
-                        .create()
-                        .show();
-            } else {
-                makeRequest();
-            }
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    protected void makeRequest() {
-        ActivityCompat.requestPermissions(MainActivity.this,
-                new String[] {Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_LOCATION);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted
-                } else {
-//
-//                    // permission denied
-
-                }
-                return;
-            }
-
-        }
-    }
     @Override
     protected void onPause() {
         Log.v(TAG, "onPause()");

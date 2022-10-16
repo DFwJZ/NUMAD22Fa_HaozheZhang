@@ -4,47 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Location">
+  >
 
-    <TextView
-        android:id="@+id/longitude_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/long_display"
-        app:layout_constraintBottom_toBottomOf="@+id/latitude_display"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/latitude_display"
-        app:layout_constraintTop_toTopOf="@+id/latitude_display" />
+<!--    <TextView-->
+<!--        android:id="@+id/longitude_display"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/long_display"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/latitude_display"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/latitude_display"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/latitude_display" />-->
 
-    <TextView
-        android:id="@+id/latitude_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lat_display"
-        app:layout_constraintBottom_toTopOf="@+id/reset_location"
-        app:layout_constraintEnd_toStartOf="@+id/longitude_display"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/latitude_display"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/lat_display"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/reset_location"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/longitude_display"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/distance_travelled_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/distance_travelled_display"
-        app:layout_constraintBottom_toBottomOf="@+id/reset_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/reset_location"
-        app:layout_constraintTop_toTopOf="@+id/reset_location" />
+<!--    <TextView-->
+<!--        android:id="@+id/distance_travelled_display"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/distance_travelled_display"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/reset_location"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/reset_location"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/reset_location" />-->
 
-    <Button
-        android:id="@+id/reset_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reset_distance"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/latitude_display"
-        app:layout_constraintStart_toStartOf="@+id/latitude_display"
-        app:layout_constraintTop_toBottomOf="@+id/latitude_display" />
+<!--    <Button-->
+<!--        android:id="@+id/reset_location"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/reset_distance"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/latitude_display"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/latitude_display"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/latitude_display" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/get_current_location"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/btn_current_location"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/reset_location"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/longitude_display"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/latitude_display"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/latitude_display" />-->
+
+<!--&lt;!&ndash;    android:onClick="getLocation"&ndash;&gt;-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
